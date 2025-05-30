@@ -82,11 +82,11 @@ app.post('/api/employee', async (req, res, next) => {
       return res.status(400).json({ error: 'Invalid Employee ID format' });
     }
 
-    if (currentSalary < 0 || currentSalary > 1000000 ||
-        bonusAmount < 0 || bonusAmount > 1000000 ||
-        incrementPercentage < 0 || incrementPercentage > 100) {
-      return res.status(400).json({ error: 'Invalid numeric values' });
-    }
+   if (currentSalary < 0 || currentSalary > 1000000 ||
+    bonusAmount < 0 || bonusAmount > 1000000 ||
+    incrementPercentage < 0 || incrementPercentage > 100) {
+  return res.status(400).json({ error: 'Invalid numeric values' });
+}
 
     // Calculate new salary
     const incrementAmount = currentSalary * (incrementPercentage / 100);
