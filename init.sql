@@ -1,17 +1,10 @@
-
-CREATE DATABASE employee_portal;
-
-
-\c employee_portal
-
-
 CREATE TABLE employee_records (
     id SERIAL PRIMARY KEY,
-    employee_id VARCHAR(7) NOT NULL CHECK (employee_id ~ '^ATS0(?!000)\d{3}$'),
-    employee_name VARCHAR(30) NOT NULL CHECK (employee_name ~ '^[a-zA-Z\s]{5,30}$'),
-    department VARCHAR(50) NOT NULL,
-    position VARCHAR(30) NOT NULL CHECK (position ~ '^[a-zA-Z\s]{5,30}$'),
-    month VARCHAR(10) NOT NULL CHECK (month IN (
+    employee_id VARCHAR(25) NOT NULL CHECK (employee_id ~ '^ATS0(?!000)\d{3}$'),
+    employee_name VARCHAR(130) NOT NULL CHECK (employee_name ~ '^[a-zA-Z\s]{5,30}$'),
+    department VARCHAR(150) NOT NULL,
+    position VARCHAR(130) NOT NULL CHECK (position ~ '^[a-zA-Z\s]{5,30}$'),
+    month VARCHAR(60) NOT NULL CHECK (month IN (
         'January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December'
     )),
